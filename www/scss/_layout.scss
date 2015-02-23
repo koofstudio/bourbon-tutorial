@@ -48,6 +48,11 @@ article.teaser--top {
   margin-top:88px;
   margin-bottom:79px;
   
+  @include media($mobile) {
+    @include shift(1);
+    @include span-columns(10);
+  }
+
   & .teaser-image {
     @include size($teaser-image-size);
     @include background-image(  url("../img/chevron-no-background.svg"), 
@@ -65,12 +70,20 @@ article.teaser--top {
   @include span-columns(8);
   @include pad(10px 0px 75px 0px);
   
+  @include media($mobile) {
+    @include shift(1);
+    @include span-columns(10);
+  }
+
   .teaser--recent {
     margin-top:50px;
   }
   
   .meta {
     float:right;
+    @include media($mobile){
+      float:none;
+    }
   }
   
 }
@@ -169,6 +182,10 @@ article.teaser--top {
     @extend %tower-common;
     height:147px;
     @include span-columns(2 of 9);
+    @include media($mobile) {
+      @include span-columns(9 of 9);
+      text-align:center;
+    }
     @include retina-image('../img/icon-tower', 114px 147px);
     background-repeat:no-repeat;
     background-position:center center;
