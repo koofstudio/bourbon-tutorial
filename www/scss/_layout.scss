@@ -77,6 +77,7 @@ article.teaser--top {
 /************ Article Detail */
 #full-article {
   @include span-columns(12);
+  padding-bottom:50px;
     
   #article-content {
     @include shift-in-context(1 of 12);
@@ -102,13 +103,17 @@ article.teaser--top {
 }
 
 /************ Subscribe */
-#subscribe {
+%whitebox {
   @include shift(1);
   @include span-columns(10);
   @include pad(48px 0px 45px 0px);
   margin-bottom:105px;  
   background:white;
-  border-top:4px solid $red;
+  border-top:4px solid $red;  
+}
+
+#subscribe {
+  @extend %whitebox;
   
   .note {
     float:left;
@@ -120,6 +125,34 @@ article.teaser--top {
     margin-right:$column;
   }
 }
+
+/************ Author */
+#author {
+  @include shift(1);
+  @include span-columns(10);
+  padding-top:75px;
+      
+  .author-icon {
+    float:left;
+    margin-right:23px;
+    @include size($author-image-size);
+    @include retina-image('../img/author', $author-image-size, 'jpg');
+    border-radius:50%;
+  }
+}
+
+/************ Recommended Reading */
+#recommended-reading {
+  @extend %whitebox;
+  margin-top:55px;
+  
+  h5, 
+  ul {
+    margin-left:($column+$gutter);
+  }
+}
+
+
 
 /************ About */
 #about {
