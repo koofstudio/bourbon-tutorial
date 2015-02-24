@@ -99,20 +99,17 @@ article.teaser--top {
   }
 
   %article-images {
-    background-position:center;
     border-radius:$base-border-radius;    
   }
   #main-image {
     @extend %article-images;
     margin:72px 0px 60px 0px;
-    @include size($main-image-size);
-    @include retina-image('../img/chevron-main-image', $main-image-size, 'jpg');
+    @include retina-image-container(chevron-main-image, $main-image-size, 'jpg');
   }
   .content-image {
     @extend %article-images;
     margin:15px 0px 27px 0px;
-    @include size($content-image-size);
-    @include retina-image('../img/image-article-content', $content-image-size, 'jpg');
+    @include retina-image-container('image-article-content', $content-image-size, 'jpg');
   } 
 }
 
@@ -149,8 +146,7 @@ article.teaser--top {
   .author-icon {
     float:left;
     margin-right:23px;
-    @include size($author-image-size);
-    @include retina-image('../img/author', $author-image-size, 'jpg');
+    @include retina-image-container(author, $author-image-size, jpg);
     border-radius:50%;
   }
 }
